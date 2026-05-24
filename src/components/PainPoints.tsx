@@ -16,7 +16,7 @@ export default function PainPoints() {
             transition={{ duration: 0.5 }}
             className="inline-block px-4 py-1.5 rounded-full border border-[#23525F] bg-transparent mb-6 text-[#3BB1CA] text-[11px] font-bold tracking-widest uppercase"
           >
-            Por que isso importa
+            Você se identifica?
           </motion.div>
 
           <motion.h2

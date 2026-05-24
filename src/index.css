@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg-primary: #F2F6F7;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-dark: #0D1E22;
+  --color-bg-dark-soft: #111F24;
+  --color-accent: #23525F;
+  --color-accent-light: #2E8A9E;
+  --color-accent-muted: #E5F0F2;
+  --color-title-dark: #255259;
+  --color-text-primary: #0D1E22;
+  --color-text-secondary: #4A6068;
+  --color-text-on-dark: #ECEEF0;
+  --color-text-muted-dark: #7A9099;
+  --color-border-light: rgba(35, 82, 95, 0.12);
+  --color-border-dark: rgba(236, 238, 240, 0.1);
+}
+
+@layer base {
+  body {
+    @apply bg-bg-primary text-text-primary antialiased font-sans selection:bg-accent selection:text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+/* Custom Scrollbar styled with Site Identity */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-light);
+}

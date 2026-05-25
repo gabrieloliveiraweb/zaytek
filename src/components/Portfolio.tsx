@@ -18,7 +18,7 @@ export default function Portfolio() {
       context:
         "Restaurante local que dependia só do boca a boca. Ninguém sabia que existia fora do bairro.",
       resultado: "Primeiro contato pelo site na semana do lançamento.",
-      link: waLink,
+      link: "https://pontodosabor.com",
     },
     {
       id: 2,
@@ -29,7 +29,7 @@ export default function Portfolio() {
       context:
         "Academia sem presença digital. Novos alunos só chegavam por quem já conhecia fisicamente.",
       resultado: "Passou a ser encontrada por quem ainda não a conhecia.",
-      link: waLink,
+      link: "https://academiaworldfit.com",
     },
     {
       id: 3,
@@ -41,7 +41,7 @@ export default function Portfolio() {
         "Hamburgueria que recebia pedidos pelo direct e WhatsApp sem nenhuma organização ou presença profissional.",
       resultado:
         "Clientes pedem pelo site com autonomia. Menos mensagem, menos confusão, mais venda.",
-      link: waLink,
+      link: "https://brasaebrioche.vercel.app",
     },
   ];
 

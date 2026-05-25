@@ -133,7 +133,7 @@ export default function Services() {
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-accent text-white px-8 py-3.5 rounded-md font-medium text-[15px] hover:bg-accent-light transition-colors flex items-center gap-2 group"
+            className="bg-accent text-white px-8 py-3.5 rounded-md font-medium text-[15px] hover:bg-accent-light transition-colors flex items-center justify-center gap-2 group whitespace-nowrap"
           >
             Quero meu diagnóstico gratuito{" "}
             <ArrowRight

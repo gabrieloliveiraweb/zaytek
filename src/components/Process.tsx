@@ -18,17 +18,17 @@ export default function Process() {
     {
       num: "01",
       title: "Diagnóstico",
-      text: "Entendemos seu negócio, seu público e seus gargalos antes de propor qualquer solução.",
+      text: "Analisamos seu posicionamento, operação e potencial de crescimento para identificar gargalos, oportunidades e prioridades.",
     },
     {
       num: "02",
       title: "Estratégia",
-      text: "Estruturamos um plano claro com o que será feito, em qual ordem e com qual objetivo.",
+      text: "Com base no diagnóstico, definimos quais iniciativas realmente fazem sentido para o momento do negócio.",
     },
     {
       num: "03",
       title: "Solução",
-      text: "Executamos sob medida e acompanhamos até o resultado acontecer de verdade.",
+      text: "Desenvolvemos e implementamos as soluções necessárias para atingir os objetivos definidos.",
     },
   ];
 
@@ -37,6 +37,7 @@ export default function Process() {
       id="processo"
       className="py-24 bg-bg-dark text-text-on-dark relative"
       ref={containerRef}
+      aria-labelledby="processo-heading"
     >
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-24">
@@ -50,6 +51,7 @@ export default function Process() {
           </motion.div>
 
           <motion.h2
+            id="processo-heading"
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

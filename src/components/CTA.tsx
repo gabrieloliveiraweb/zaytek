@@ -6,7 +6,7 @@ export default function CTA() {
     "https://wa.me/5541920047176?text=Oi+Gabriel%2C+quero+agendar+minha+consultoria+gratuita+com+a+Zaytek.";
 
   return (
-    <section className="relative overflow-hidden pt-[120px] pb-[80px]">
+    <section className="relative overflow-hidden pt-[120px] pb-[80px]" aria-labelledby="cta-heading">
       {/* Radial subtle glow */}
       <div
         className="absolute inset-0 pointer-events-none"
@@ -18,6 +18,7 @@ export default function CTA() {
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
         <motion.h2
+          id="cta-heading"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

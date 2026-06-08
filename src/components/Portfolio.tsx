@@ -99,7 +99,9 @@ export default function Portfolio() {
                     >
                       <img
                         src={project.image}
-                        alt={project.title}
+                        alt={`Mockup do projeto ${project.title}`}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover"
                       />
                     </motion.div>
@@ -204,11 +206,14 @@ export default function Portfolio() {
                           transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                           onClick={() => setSelectedImage(project.image)}
                         >
-                          <img
+                           <img
                             src={project.image}
-                            alt={project.title}
+                            alt={`Mockup do projeto ${project.title}`}
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-[400ms] ease-in-out"
                           />
+
                         </motion.div>
                       </>
                     ) : (
@@ -222,11 +227,14 @@ export default function Portfolio() {
                           transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
                           onClick={() => setSelectedImage(project.image)}
                         >
-                          <img
+                           <img
                             src={project.image}
-                            alt={project.title}
+                            alt={`Mockup do projeto ${project.title}`}
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-[400ms] ease-in-out"
                           />
+
                         </motion.div>
 
                         <motion.div
@@ -315,13 +323,17 @@ export default function Portfolio() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Visualização expandida do projeto"
             onClick={() => setSelectedImage(null)}
           >
             <button
-              className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors"
+              className="absolute top-6 right-6 text-white hover:text-gray-300 transition-colors cursor-pointer p-2 rounded-full hover:bg-white/10"
               onClick={() => setSelectedImage(null)}
+              aria-label="Fechar visualização do projeto"
             >
-              <X size={32} />
+              <X size={32} aria-hidden="true" />
             </button>
             <motion.img
               initial={{ scale: 0.95, opacity: 0 }}

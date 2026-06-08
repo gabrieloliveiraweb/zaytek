@@ -8,12 +8,17 @@ export default function Hero() {
   return (
     <section
       id="hero"
+      aria-label="Seção principal"
       className="relative w-full flex flex-col justify-center items-center bg-[#F2F6F7] overflow-hidden min-h-[100svh] py-28 md:py-24"
     >
-      {/* Background Image */}
+      {/* Background Image - LCP: fetchpriority high */}
       <img
         src="/bg-home-zaytek.webp"
-        alt="Zaytek"
+        alt="Cidades e tecnologia ao fundo"
+        aria-hidden="true"
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
         className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105 blur-[1px]"
       />
 

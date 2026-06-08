@@ -29,13 +29,13 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 bg-bg-primary">
+    <section id="faq" className="py-24 bg-bg-primary" aria-labelledby="faq-heading">
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-1.5 rounded-full border border-[rgba(35,82,95,0.15)] bg-[rgba(35,82,95,0.06)] mb-6 text-[#5E757D] text-[11px] font-bold tracking-widest uppercase">
+          <div className="inline-block px-4 py-1.5 rounded-full border border-[rgba(35,82,95,0.15)] bg-[rgba(35,82,95,0.06)] mb-6 text-[#5E757D] text-[11px] font-bold tracking-widest uppercase" aria-hidden="true">
             DÚVIDAS
           </div>
-          <h2 className="text-[28px] md:text-[36px] font-bold text-[#112A32] leading-[1.2] mb-4">
+          <h2 id="faq-heading" className="text-[28px] md:text-[36px] font-bold text-[#112A32] leading-[1.2] mb-4">
             Perguntas frequentes
           </h2>
           <p className="text-[16px] text-text-secondary">
@@ -43,10 +43,11 @@ export default function FAQ() {
           </p>
         </div>
 
-        <div className="border-t border-[rgba(0,0,0,0.05)]">
+        <div className="border-t border-[rgba(0,0,0,0.05)]" role="list">
           {faqs.map((faq, index) => (
             <AccordionItem
               key={index}
+              id={`faq-item-${index}`}
               question={faq.q}
               answer={faq.a}
               isOpen={openIndex === index}
@@ -60,26 +61,34 @@ export default function FAQ() {
 }
 
 function AccordionItem({
+  id,
   question,
   answer,
   isOpen,
   onClick,
 }: {
+  id: string;
   question: string;
   answer: string;
   isOpen: boolean;
   onClick: () => void;
 }) {
+  const buttonId = `${id}-button`;
+  const panelId = `${id}-panel`;
+
   return (
-    <div className="border-b border-[rgba(0,0,0,0.05)]">
+    <div className="border-b border-[rgba(0,0,0,0.05)]" role="listitem">
       <button
+        id={buttonId}
         onClick={onClick}
-        className="w-full py-6 flex items-center justify-between text-left focus:outline-none"
+        className="w-full py-6 flex items-center justify-between text-left cursor-pointer focus-visible:outline-2 focus-visible:outline-[#2E8A9E] focus-visible:outline-offset-2 rounded-sm"
+        aria-expanded={isOpen}
+        aria-controls={panelId}
       >
         <span className="font-sans font-medium text-[15px] sm:text-[16px] text-[#112A32] pr-6">
           {question}
         </span>
-        <div className="shrink-0 text-accent">
+        <div className="shrink-0 text-accent" aria-hidden="true">
           {isOpen ? (
             <Minus size={20} strokeWidth={1.5} />
           ) : (
@@ -91,6 +100,9 @@ function AccordionItem({
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id={panelId}
+            role="region"
+            aria-labelledby={buttonId}
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}

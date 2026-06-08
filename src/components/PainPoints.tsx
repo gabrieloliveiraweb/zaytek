@@ -6,7 +6,7 @@ export default function PainPoints() {
     "https://wa.me/5541920047176?text=Oi+Gabriel%2C+vim+pelo+site+e+quero+entender+como+resolver+os+problemas+digitais+do+meu+neg%C3%B3cio.";
 
   return (
-    <section className="py-24 bg-bg-dark text-text-on-dark flex items-center">
+    <section className="py-24 bg-bg-dark text-text-on-dark flex items-center" aria-labelledby="painpoints-heading">
       <div className="max-w-5xl mx-auto px-6 w-full">
         <div className="flex flex-col items-center text-center mb-16">
           <motion.div
@@ -20,6 +20,7 @@ export default function PainPoints() {
           </motion.div>
 
           <motion.h2
+            id="painpoints-heading"
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

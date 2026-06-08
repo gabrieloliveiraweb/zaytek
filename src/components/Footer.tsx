@@ -2,11 +2,11 @@ import { Instagram, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[rgba(255,255,255,0.05)] pt-16 pb-8 relative z-20">
+    <footer className="border-t border-[rgba(255,255,255,0.05)] pt-16 pb-8 relative z-20" role="contentinfo" aria-label="Rodapé">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-center lg:text-left">
           <div className="md:col-span-2 lg:col-span-2 flex flex-col items-center lg:items-start">
-            <a href="#">
+            <a href="#" aria-label="Zaytek - Ir para o topo da página">
               <img src="/logo.png" alt="Zaytek" className="h-8 md:h-10 w-auto object-contain" />
             </a>
             <p className="text-text-muted-dark mt-4 max-w-[300px] text-[15px] leading-relaxed mb-6">
@@ -50,7 +50,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
+          <nav aria-label="Links de navegação do rodapé">
             <h4 className="font-display font-bold text-text-on-dark mb-4 text-[16px]">
               Navegação
             </h4>
@@ -96,9 +96,9 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
+          </nav>
 
-          <div>
+          <div aria-label="Informações de contato">
             <h4 className="font-display font-bold text-text-on-dark mb-4 text-[16px]">
               Contato
             </h4>

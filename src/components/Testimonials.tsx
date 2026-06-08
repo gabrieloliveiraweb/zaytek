@@ -24,7 +24,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-24 bg-bg-surface overflow-hidden">
+    <section className="py-24 bg-bg-surface overflow-hidden" aria-labelledby="testimonials-heading">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <motion.div
@@ -37,6 +37,7 @@ export default function Testimonials() {
           </motion.div>
 
           <motion.h2
+            id="testimonials-heading"
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -72,11 +73,12 @@ export default function Testimonials() {
               </div>
 
               <div>
-                <div className="flex gap-1 mb-6">
+                <div className="flex gap-1 mb-6" aria-label={`Avaliação: ${quote.rating} estrelas`} role="img">
                   {Array.from({ length: quote.rating }).map((_, i) => (
                     <Star
                       key={i}
                       size={16}
+                      aria-hidden="true"
                       className="fill-[#FACC15] text-[#FACC15]"
                     />
                   ))}

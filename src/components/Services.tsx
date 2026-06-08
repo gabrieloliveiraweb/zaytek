@@ -55,7 +55,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="servicos" className="py-24 bg-bg-primary pt-0">
+    <section id="servicos" className="py-24 bg-bg-primary pt-0" aria-labelledby="servicos-heading">
       <div className="max-w-5xl mx-auto px-6">
         <div className="mb-16 flex flex-col items-center text-center">
           <motion.div
@@ -68,6 +68,7 @@ export default function Services() {
           </motion.div>
 
           <motion.h2
+            id="servicos-heading"
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

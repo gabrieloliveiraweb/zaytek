@@ -42,7 +42,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="w-full max-w-[800px] mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+      <div className="w-full max-w-[900px] mx-auto px-6 relative z-10 flex flex-col items-center text-center">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
-          className="text-[32px] md:text-[48px] lg:text-[52px] font-bold text-white leading-[1.2] mb-6 tracking-tight max-w-[700px] mx-auto"
+          className="text-[32px] md:text-[48px] lg:text-[52px] font-bold text-white leading-[1.2] mb-6 tracking-tight"
         >
           Soluções Digitais Personalizadas para seu negócio Lucrar mais com menos dor de Cabeça
         </motion.h1>
@@ -66,7 +66,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25, ease: [0.4, 0, 0.2, 1] }}
-          className="text-[14px] md:text-[16px] lg:text-[18px] text-[#D1D5DB] leading-[1.6] mb-[40px] max-w-[650px] mx-auto font-light"
+          className="text-[14px] md:text-[16px] lg:text-[18px] text-[#D1D5DB] leading-[1.6] mb-[40px] max-w-[650px] font-light"
         >
           Entendemos o seu negócio, mapeamos o que precisa ser resolvido e executamos com estratégia, para você focar no que realmente importa.
         </motion.p>

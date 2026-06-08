@@ -19,10 +19,8 @@ export default function About() {
           >
             <div className="relative aspect-square md:aspect-[4/4.5] rounded-[16px] overflow-hidden border border-border-light shadow-lg group">
               <img
-                src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&q=80&w=1740"
-                alt="Gabriel, fundador da Zaytek, assessoria digital estratégica"
-                loading="lazy"
-                decoding="async"
+                src="/perfil-sobre.png"
+                alt="Gabriel - Fundador da Zaytek"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[rgba(13,30,34,0.4)] to-transparent pointer-events-none" />

@@ -15,6 +15,7 @@ import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
+import LeadForm from './components/LeadForm';
 
 export default function App() {
   return (
@@ -28,7 +29,7 @@ export default function App() {
         <Process />
         <Portfolio />
         <About />
-        <Testimonials />
+        <LeadForm />
         <FAQ />
         
         <div className="relative overflow-hidden bg-bg-dark">

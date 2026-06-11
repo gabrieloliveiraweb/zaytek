@@ -2,11 +2,12 @@ import { motion } from "motion/react";
 import {
   AppWindow,
   ShoppingCart,
-  Smartphone,
   Activity,
   BarChart2,
   ArrowRight,
   Monitor,
+  Rocket,
+  Smartphone,
 } from "lucide-react";
 
 export default function Services() {
@@ -19,38 +20,38 @@ export default function Services() {
         <AppWindow size={20} className="text-[#23525F]" strokeWidth={1.5} />
       ),
       title: "Sites e Landing Pages",
-      text: "Presença digital que converte visitantes em clientes.",
+      text: "Uma presença online que representa o negócio com credibilidade e gera contato real.",
     },
     {
       icon: (
         <ShoppingCart size={20} className="text-[#23525F]" strokeWidth={1.5} />
       ),
       title: "Lojas Virtuais",
-      text: "Seu negócio vendendo de forma contínua, sem depender de presença física ou de marketplace para crescer.",
+      text: "Seu negócio vendendo de forma contínua, sem depender de ponto físico ou marketplace.",
     },
     {
       icon: <Monitor size={20} className="text-[#23525F]" strokeWidth={1.5} />,
-      title: "Sistemas Web",
-      text: "Ferramentas internas que organizam sua operação. Painéis, gestão e controle personalizados para o seu negócio.",
+      title: "Sistemas & Softwares",
+      text: "Painéis de gestão, portais de clientes, plataformas internas, construídos para o seu processo.",
+    },
+    {
+      icon: <Activity size={20} className="text-[#23525F]" strokeWidth={1.5} />,
+      title: "Automações e Integrações",
+      text: "Para empresas que precisam estar no celular dos seus clientes ou equipe, com experiência pensada para o seu contexto.",
     },
     {
       icon: (
         <Smartphone size={20} className="text-[#23525F]" strokeWidth={1.5} />
       ),
       title: "Aplicativos Mobile",
-      text: "Do zero ao app, seja para tirar uma ideia do papel ou criar um canal próprio para o seu negócio. iOS e Android, sob medida.",
-    },
-    {
-      icon: <Activity size={20} className="text-[#23525F]" strokeWidth={1.5} />,
-      title: "Automações e Integrações",
-      text: "Transformamos processos manuais em fluxos eficientes. Menos operação, mais tempo para o que realmente importa.",
+      text: "Estruturamos a direção digital do seu negócio antes de qualquer investimento. Clareza antes de qualquer execução.",
     },
     {
       icon: (
-        <BarChart2 size={20} className="text-[#23525F]" strokeWidth={1.5} />
+        <Rocket size={20} className="text-[#23525F]" strokeWidth={1.5} />
       ),
-      title: "Posicionamento e Estratégia Digital",
-      text: "Estruturamos a direção digital do seu negócio antes de qualquer investimento. Clareza antes de qualquer execução.",
+      title: "Tráfego Pago",
+      text: "Clientes chegando pelo digital de forma previsível, sem você precisar depender de indicação ou sorte.",
     },
   ];
 
@@ -64,7 +65,7 @@ export default function Services() {
             viewport={{ once: true }}
             className="inline-block px-4 py-1.5 rounded-full border border-[rgba(35,82,95,0.15)] bg-[rgba(35,82,95,0.06)] mb-6 text-[#5E757D] text-[11px] font-bold tracking-widest uppercase"
           >
-            O que entregamos
+            O que Fazemos
           </motion.div>
 
           <motion.h2
@@ -75,7 +76,7 @@ export default function Services() {
             transition={{ delay: 0.1 }}
             className="text-[32px] md:text-[44px] font-bold text-[#112A32] leading-[1.2] mb-4 max-w-[700px]"
           >
-            Como a Zaytek coloca a estratégia em prática
+            A ferramenta certa depende do momento do negócio          
           </motion.h2>
 
           <motion.p
@@ -85,8 +86,7 @@ export default function Services() {
             transition={{ delay: 0.2 }}
             className="text-[16px] text-text-secondary max-w-[500px] mx-auto"
           >
-            Cada diagnóstico revela um caminho diferente. Temos as ferramentas
-            certas para percorrê-lo.
+            Cada empresa está em um momento diferente. O que faz sentido para uma pode ser prematuro ou desnecessário para outra
           </motion.p>
         </div>
 
@@ -124,10 +124,10 @@ export default function Services() {
         >
           <div>
             <p className="text-text-secondary text-[15px] mb-1">
-              Não sabe qual o seu negócio precisa agora?
+              Não tem certeza por onde começar?
             </p>
             <p className="text-text-primary font-medium text-[16px]">
-              Começa pelo diagnóstico. É gratuito.
+              Agende uma consultoria gratuita.
             </p>
           </div>
           <a
@@ -136,7 +136,7 @@ export default function Services() {
             rel="noopener noreferrer"
             className="bg-accent text-white px-8 py-3.5 rounded-md font-medium text-[15px] hover:bg-accent-light transition-colors flex items-center justify-center gap-2 group whitespace-nowrap"
           >
-            Quero meu diagnóstico gratuito{" "}
+            Agendar Consultoria{" "}
             <ArrowRight
               size={16}
               className="group-hover:translate-x-1 transition-transform"

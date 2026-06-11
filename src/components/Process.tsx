@@ -1,5 +1,5 @@
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "motion/react";
+import { useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 
 export default function Process() {
@@ -13,6 +13,13 @@ export default function Process() {
   });
 
   const lineWidth = useTransform(scrollYProgress, [0, 0.8], ["0%", "100%"]);
+  const [activeStep, setActiveStep] = useState(1);
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    if (latest > 0.65) setActiveStep(3);
+    else if (latest > 0.25) setActiveStep(2);
+    else setActiveStep(1);
+  });
 
   const steps = [
     {
@@ -23,11 +30,11 @@ export default function Process() {
     {
       num: "02",
       title: "Estratégia",
-      text: "Com base no diagnóstico, definimos quais iniciativas realmente fazem sentido para o momento do negócio.",
+      text: "Definimos quais iniciativas realmente fazem sentido para o momento do negócio.",
     },
     {
       num: "03",
-      title: "Solução",
+      title: "Execução",
       text: "Desenvolvemos e implementamos as soluções necessárias para atingir os objetivos definidos.",
     },
   ];
@@ -37,7 +44,6 @@ export default function Process() {
       id="processo"
       className="py-24 bg-bg-dark text-text-on-dark relative"
       ref={containerRef}
-      aria-labelledby="processo-heading"
     >
       <div className="max-w-5xl mx-auto px-6">
         <div className="text-center mb-24">
@@ -51,14 +57,13 @@ export default function Process() {
           </motion.div>
 
           <motion.h2
-            id="processo-heading"
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-[30px] md:text-[34px] font-bold text-text-on-dark leading-[1.2]"
           >
-            Um processo claro, do início ao resultado.
+            Metodologia da Zaytek
           </motion.h2>
 
           <motion.p
@@ -68,33 +73,37 @@ export default function Process() {
             transition={{ delay: 0.2 }}
             className="text-[16px] text-text-muted-dark max-w-[500px] mx-auto mt-4"
           >
-            Todo projeto segue um processo claro, do entendimento do seu negócio
-            até a entrega.
+            Nada é executado antes de entendermos o contexto, as prioridades e o que realmente faz sentido para o seu momento.
           </motion.p>
         </div>
 
         {/* Desktop Process Timeline */}
         <div className="hidden md:block relative pt-6 pb-12">
-          {/* Base Line */}
-          <div className="absolute top-[26px] left-[10%] right-[10%] h-[2px] bg-border-dark" />
-          {/* Active Line (driven by scroll) */}
-          <motion.div
-            className="absolute top-[26px] left-[10%] h-[2px] bg-[#3BB1CA] origin-left shadow-[0_0_12px_rgba(59,177,202,0.8)] rounded-full"
-            style={{ width: lineWidth }}
-          />
+          {/* Timeline Track */}
+          <div className="absolute top-[26px] left-[10%] right-[10%] h-[2px]">
+             {/* Base Line */}
+             <div className="w-full h-full bg-border-dark" />
+             {/* Active Line (driven by scroll) */}
+             <motion.div
+               className="absolute top-0 left-0 h-[2px] bg-[#3BB1CA] origin-left shadow-[0_0_12px_rgba(59,177,202,0.8)] rounded-full"
+               style={{ width: lineWidth }}
+             />
+          </div>
 
-          <div className="grid grid-cols-3 gap-8 relative z-10">
-            {steps.map((step, index) => (
+          <div className="grid grid-cols-3 gap-8 relative z-10 w-full">
+            {steps.map((step, index) => {
+              const isActive = activeStep >= index + 1;
+              return (
               <div
                 key={index}
                 className="flex flex-col items-center text-center group"
               >
-                <div className="w-[44px] h-[44px] rounded-full border-[1.5px] border-border-dark bg-bg-dark flex items-center justify-center mb-8 relative transition-colors duration-500 group-hover:border-[#3BB1CA] group-hover:bg-[rgba(59,177,202,0.1)]">
-                  <span className="font-display text-[15px] font-bold text-text-muted-dark group-hover:text-[#3BB1CA] transition-colors duration-500">
+                <div className={`w-[44px] h-[44px] rounded-full border-[1.5px] bg-bg-dark flex items-center justify-center mb-8 relative transition-colors duration-500 group-hover:border-[#3BB1CA] group-hover:bg-[rgba(59,177,202,0.1)] ${isActive ? 'border-[#3BB1CA] bg-[rgba(59,177,202,0.1)]' : 'border-border-dark'}`}>
+                  <span className={`font-display text-[15px] font-bold transition-colors duration-500 group-hover:text-[#3BB1CA] ${isActive ? 'text-[#3BB1CA]' : 'text-text-muted-dark'}`}>
                     {step.num}
                   </span>
                 </div>
-                <div className="font-display font-bold text-[11px] text-accent-light uppercase tracking-[0.1em] mb-2">
+                <div className={`font-display font-bold text-[11px] uppercase tracking-[0.1em] mb-2 transition-colors duration-500 group-hover:text-accent-light ${isActive ? 'text-accent-light' : 'text-text-muted-dark'}`}>
                   Passo {parseFloat(step.num)}
                 </div>
                 <h3 className="font-display font-semibold text-[18px] text-text-on-dark mb-2">
@@ -104,29 +113,33 @@ export default function Process() {
                   {step.text}
                 </p>
               </div>
-            ))}
+            )})}
           </div>
         </div>
 
         {/* Mobile Vertical Timeline */}
         <div className="md:hidden space-y-12 pl-4 md:pl-0 relative">
-          {/* Mobile Base Line */}
-          <div className="absolute left-[33px] top-4 bottom-8 w-[2px] bg-border-dark" />
+          {/* Mobile Base Track */}
+          <div className="absolute left-[33px] top-4 bottom-8 w-[2px]">
+             {/* Base line */}
+             <div className="w-full h-full bg-border-dark" />
+             {/* Mobile Active Line (driven by scroll) */}
+             <motion.div
+               className="absolute top-0 left-0 w-[2px] bg-[#3BB1CA] origin-top shadow-[0_0_12px_rgba(59,177,202,0.8)] rounded-full"
+               style={{ height: lineWidth }}
+             />
+          </div>
 
-          {/* Mobile Active Line (driven by scroll) */}
-          <motion.div
-            className="absolute left-[33px] top-4 w-[2px] bg-[#3BB1CA] origin-top shadow-[0_0_12px_rgba(59,177,202,0.8)] rounded-full"
-            style={{ height: lineWidth }}
-          />
-
-          {steps.map((step, index) => (
+          {steps.map((step, index) => {
+            const isActive = activeStep >= index + 1;
+            return (
             <div key={index} className="relative pl-16">
-              <div className="absolute left-0 top-1 w-[36px] h-[36px] rounded-full border-[1.5px] border-border-dark bg-bg-dark flex items-center justify-center z-10">
-                <span className="font-display text-[13px] font-bold text-[#3BB1CA]">
+              <div className={`absolute left-0 top-1 w-[36px] h-[36px] rounded-full border-[1.5px] bg-bg-dark flex items-center justify-center z-10 transition-colors duration-500 ${isActive ? 'border-[#3BB1CA] bg-[rgba(59,177,202,0.1)]' : 'border-border-dark'}`}>
+                <span className={`font-display text-[13px] font-bold transition-colors duration-500 ${isActive ? 'text-[#3BB1CA]' : 'text-text-muted-dark'}`}>
                   {step.num}
                 </span>
               </div>
-              <div className="font-display font-bold text-[11px] text-accent-light uppercase tracking-[0.1em] mb-1">
+              <div className={`font-display font-bold text-[11px] uppercase tracking-[0.1em] mb-1 transition-colors duration-500 ${isActive ? 'text-accent-light' : 'text-text-muted-dark'}`}>
                 Passo {parseFloat(step.num)}
               </div>
               <h3 className="font-display font-semibold text-[18px] text-text-on-dark mb-2 mt-1">
@@ -136,7 +149,7 @@ export default function Process() {
                 {step.text}
               </p>
             </div>
-          ))}
+          )})}
         </div>
 
         <div className="mt-20 flex justify-center">

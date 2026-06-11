@@ -17,7 +17,7 @@ export default function Portfolio() {
       image: "/restaurante_mockup.webp",
       context:
         "Restaurante local que dependia só do boca a boca. Ninguém sabia que existia fora do bairro.",
-      resultado: "Primeiro contato pelo site na semana do lançamento.",
+      resultado: "Passou a receber contatos pelo digital ainda na semana do lançamento",
       link: "https://pontodosabor.com",
     },
     {
@@ -28,7 +28,7 @@ export default function Portfolio() {
       image: "/gym_mockup.webp",
       context:
         "Academia sem presença digital. Novos alunos só chegavam por quem já conhecia fisicamente.",
-      resultado: "Passou a ser encontrada por quem ainda não a conhecia.",
+      resultado: "Ganhou presença no Google e passou a receber alunos que nunca tinham ouvido falar da academia.",
       link: "https://academiaworldfit.com",
     },
     {
@@ -299,7 +299,7 @@ export default function Portfolio() {
 
         <div className="mt-16 flex flex-col items-center gap-6 relative z-30 w-full px-4">
           <p className="text-text-secondary text-[15px] text-center max-w-[280px] sm:max-w-none">
-            Quer um projeto como esses para o seu negócio?
+            Tem um desafio parecido? Vamos entender o que faz sentido para o seu caso
           </p>
           <a
             href={waLink}

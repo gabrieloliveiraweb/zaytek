@@ -18,7 +18,7 @@ export default function Testimonials() {
     {
       text: "Curti porque não vieram empurrando coisa. Primeiro entenderam como funcionava meu atendimento e depois montaram a solução.",
       author: "John P",
-      role: "Cliente",
+      role: "Professor",
       rating: 5,
     },
   ];

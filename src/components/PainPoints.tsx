@@ -1,5 +1,47 @@
 import { motion } from "motion/react";
-import { Globe, Clock, LineChart, Smartphone, ArrowRight } from "lucide-react";
+import {  ArrowRight, EyeOff, Ban, Compass, Wrench, HardHat, Gauge, BatteryLow} from "lucide-react";
+
+const painPointsCopy = {
+  badge: "Você se identifica?",
+  title: "Sinais de que existe oportunidade para evoluir",
+  subtitle: "Ao trabalhar com empresas em diferentes fases, percebemos padrões que costumam indicar onde está o próximo passo de crescimento",
+
+  cards: [
+    {
+      icon: "BatteryLow",
+      title: "Crescer está custando mais trabalho do que dinheiro",
+      description: "Quando a operação depende de esforço manual para funcionar, cada novo cliente ou projeto aumenta a pressão, em vez de gerar mais resultado com o mesmo time."
+    },
+    {
+      icon: "EyeOff",
+      title: "O negócio é bom, mas ninguém encontra online",
+      description: "Decisões de compra passam pela internet antes de chegarem até você. Se a presença digital não reflete a qualidade do negócio, oportunidades ficam pelo caminho."
+    },
+    {
+      icon: "Ban",
+      title: "O negócio chegou em um teto e crescer parece arriscado",
+      description: "Chega um ponto em que crescer sem estrutura deixa de ser uma opção. A questão não é se tem demanda, mas se a operação aguenta atender bem."
+    },
+    {
+      icon: "Compass",
+      title: "Existem oportunidades claras, mas falta saber por onde começar",
+      description: "Há consciência de que algo pode ser feito, mas a dúvida sobre o que priorizar paralisa. Sem um diagnóstico claro, qualquer investimento parece arriscado."
+    }
+  ],
+
+  footer: {
+    text: "Se algum desses cenários soa familiar, provavelmente existe uma \noportunidade concreta esperando para ser aproveitada.",
+    buttonText: "Agendar consultoria gratuita"
+  }
+}
+
+
+const iconMap = {
+  Ban: Ban,
+  EyeOff: EyeOff,
+  Compass: Compass,
+  BatteryLow: BatteryLow    
+};
 
 export default function PainPoints() {
   const waLink =
@@ -16,7 +58,7 @@ export default function PainPoints() {
             transition={{ duration: 0.5 }}
             className="inline-block px-4 py-1.5 rounded-full border border-[#23525F] bg-transparent mb-6 text-[#3BB1CA] text-[11px] font-bold tracking-widest uppercase"
           >
-            Você se identifica?
+            {painPointsCopy.badge}
           </motion.div>
 
           <motion.h2
@@ -27,7 +69,7 @@ export default function PainPoints() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-[30px] md:text-[34px] font-bold leading-tight mb-4 max-w-2xl"
           >
-            Os erros digitais que mais custam dinheiro para negócios
+            {painPointsCopy.title}
           </motion.h2>
 
           <motion.p
@@ -37,99 +79,39 @@ export default function PainPoints() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-[16px] text-text-muted-dark max-w-[540px] mx-auto"
           >
-            Depois de trabalhar com diferentes negócios, os mesmos padrões
-            aparecem. Veja se você se identifica:
+            {painPointsCopy.subtitle}
           </motion.p>
         </div>
 
-        {/* Asymmetric Grid Layout */}
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
-          {/* Row 1: Wide + Narrow */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="md:col-span-2 group bg-[rgba(255,255,255,0.04)] border border-border-dark rounded-[12px] p-7 md:p-8 hover:border-[rgba(46,138,158,0.3)] hover:-translate-y-0.5 transition-all duration-300"
-          >
-            <Clock
-              className="text-accent-light mb-5"
-              size={26}
-              strokeWidth={1.5}
-            />
-            <h3 className="text-[16px] font-bold text-text-on-dark mb-2">
-              Processos manuais travando o crescimento
-            </h3>
-            <p className="text-[14px] text-text-muted-dark leading-relaxed">
-              Atendimento desorganizado e controles manuais consomem o tempo que
-              deveria ir para o negócio. Crescer sem estrutura só gera mais
-              desgaste.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="md:col-span-1 group bg-[rgba(255,255,255,0.04)] border border-border-dark rounded-[12px] p-7 md:p-8 hover:border-[rgba(46,138,158,0.3)] hover:-translate-y-0.5 transition-all duration-300"
-          >
-            <Globe
-              className="text-accent-light mb-5"
-              size={26}
-              strokeWidth={1.5}
-            />
-            <h3 className="text-[16px] font-bold text-text-on-dark mb-2">
-              Ignorar a internet como canal de vendas
-            </h3>
-            <p className="text-[14px] text-text-muted-dark leading-relaxed">
-              Todo dia clientes pesquisam, comparam e decidem online. Se o seu
-              negócio não aparece, essa venda vai para o concorrente.
-            </p>
-          </motion.div>
-
-          {/* Row 2: Narrow + Wide */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="md:col-span-1 group bg-[rgba(255,255,255,0.04)] border border-border-dark rounded-[12px] p-7 md:p-8 hover:border-[rgba(46,138,158,0.3)] hover:-translate-y-0.5 transition-all duration-300"
-          >
-            <LineChart
-              className="text-accent-light mb-5"
-              size={26}
-              strokeWidth={1.5}
-            />
-            <h3 className="text-[16px] font-bold text-text-on-dark mb-2">
-              Presença digital sem estratégia
-            </h3>
-            <p className="text-[14px] text-text-muted-dark leading-relaxed">
-              Estar online não é suficiente. Sem estratégia, você investe tempo
-              e dinheiro em ações que não geram retorno.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="md:col-span-2 group bg-[rgba(255,255,255,0.04)] border border-border-dark rounded-[12px] p-7 md:p-8 hover:border-[rgba(46,138,158,0.3)] hover:-translate-y-0.5 transition-all duration-300"
-          >
-            <Smartphone
-              className="text-accent-light mb-5"
-              size={26}
-              strokeWidth={1.5}
-            />
-            <h3 className="text-[16px] font-bold text-text-on-dark mb-2">
-              Tratar o digital como opcional
-            </h3>
-            <p className="text-[14px] text-text-muted-dark leading-relaxed">
-              Quem vê o digital como algo a mais está cedendo mercado para quem
-              já entendeu que é a base.
-            </p>
-          </motion.div>
+        {/* 2-Column Grid Layout */}
+        <div className="grid md:grid-cols-2 gap-6 mb-16">
+          {painPointsCopy.cards.map((card, idx) => {
+            const IconComponent = iconMap[card.icon as keyof typeof iconMap];
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 * (idx + 1) }}
+                className="group bg-[rgba(255,255,255,0.04)] border border-border-dark rounded-[12px] p-7 md:p-8 hover:border-[rgba(46,138,158,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+              >
+                {IconComponent && (
+                  <IconComponent
+                    className="text-accent-light mb-5"
+                    size={26}
+                    strokeWidth={1.5}
+                  />
+                )}
+                <h3 className="text-[16px] font-bold text-text-on-dark mb-2">
+                  {card.title}
+                </h3>
+                <p className="text-[14px] text-text-muted-dark leading-relaxed">
+                  {card.description}
+                </p>
+              </motion.div>
+            );
+          })}
         </div>
 
         <motion.div
@@ -140,9 +122,12 @@ export default function PainPoints() {
           className="flex flex-col items-center text-center gap-6"
         >
           <p className="text-text-muted-dark text-[15px]">
-            Se você se identificou com algum desses pontos,
-            <br className="hidden sm:block" /> é exatamente aí que a Zaytek
-            atua.
+            {painPointsCopy.footer.text.split("\n").map((line, i) => (
+              <span key={i}>
+                {line}
+                {i < painPointsCopy.footer.text.split("\n").length - 1 && <br className="hidden sm:block" />}
+              </span>
+            ))}
           </p>
           <a
             href={waLink}
@@ -150,7 +135,7 @@ export default function PainPoints() {
             rel="noopener noreferrer"
             className="bg-accent text-white px-8 py-3.5 rounded-md font-medium text-[15px] hover:bg-accent-light transition-colors flex items-center gap-2 group"
           >
-            Quero entender como resolver{" "}
+            {painPointsCopy.footer.buttonText}
             <ArrowRight
               size={16}
               className="group-hover:translate-x-1 transition-transform"

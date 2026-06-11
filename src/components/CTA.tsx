@@ -24,9 +24,7 @@ export default function CTA() {
           viewport={{ once: true }}
           className="text-[32px] md:text-[42px] font-bold text-text-on-dark leading-[1.1] md:leading-tight mb-6"
         >
-          Chega de improvisar no digital.<br className="block md:hidden mb-2" />
-          <span className="hidden md:inline"> </span>
-          É hora de construir com estratégia.
+         Pronto para entender o que realmente vai mover o seu negócio?          
         </motion.h2>
 
         <motion.p
@@ -52,7 +50,7 @@ export default function CTA() {
             rel="noopener noreferrer"
             className="inline-flex bg-accent text-white px-6 sm:px-8 py-4 sm:py-4 rounded-md font-medium text-[15px] sm:text-[16px] hover:bg-accent-light transition-colors items-center justify-center gap-2 group shadow-lg relative z-20 w-full sm:w-auto"
           >
-            Quero minha consultoria gratuita{" "}
+            Agendar Consultoria Gratuita
             <ArrowRight
               size={18}
               className="group-hover:translate-x-1 transition-transform"

@@ -1,27 +1,27 @@
 import { motion } from "motion/react";
-import { Eye, Cog, Search, Handshake } from "lucide-react";
+import {Cog, Search, Handshake, RefreshCcw, Globe, ClipboardSignatureIcon, FileSearch, Rocket } from "lucide-react";
 
 export default function Solutions() {
   const items = [
     {
-      icon: <Eye size={24} className="text-[#23525F]" />,
-      title: "Visibilidade que atrai cliente de verdade.",
-      text: "Presença digital estratégica e preparada para converter visitante em cliente.",
+      icon: <Globe size={24} className="text-[#23525F]" />,
+      title: "Presença digital que gera oportunidade.",
+      text: "Estruturamos canais digitais com foco no que realmente importa para o momento do negócio, não apenas para estar online.",
     },
     {
-      icon: <Cog size={24} className="text-[#23525F]" />,
-      title: "Operação que cresce sem travar.",
-      text: "Estruturamos processos para que o crescimento gere resultado, não caos.",
+      icon: <RefreshCcw size={24} className="text-[#23525F]" />,
+      title: "Menos esforço operacional, mais capacidade de crescer.",
+      text: "Identificamos onde a operação está travando e aplicamos tecnologia para liberar o time para o que gera mais valor.",
     },
     {
-      icon: <Search size={24} className="text-[#23525F]" />,
-      title: "Diagnóstico antes de qualquer investimento.",
-      text: "Entendemos o seu negócio antes de propor qualquer coisa.",
+      icon: <FileSearch size={24} className="text-[#23525F]" />,
+      title: "Primeiro entender, depois executar.",
+      text: "Começamos mapeando o momento atual do negócio. Só depois de entender o contexto e as prioridades é que definimos o que faz sentido fazer, na ordem certa.",
     },
     {
-      icon: <Handshake size={24} className="text-[#23525F]" />,
-      title: "Um parceiro no digital, não um fornecedor.",
-      text: "Acompanhamos e evoluímos a solução junto com o seu negócio.",
+      icon: <Rocket size={24} className="text-[#23525F]" />,
+      title: "Tecnologia aplicada ao próximo nível do negócio.",
+      text: "Ajudamos você a enxergar onde a tecnologia abre espaço para crescer, e transformamos isso em ações concretas, no ritmo certo para o seu negócio."
     },
   ];
 
@@ -45,9 +45,7 @@ export default function Solutions() {
             transition={{ delay: 0.1 }}
             className="text-[30px] md:text-[34px] font-bold text-[#112A32] leading-[1.2] mb-4"
           >
-            A Zaytek cuida do digital para você{" "}
-            <br className="hidden md:block" />
-            focar no seu negócio
+            Como ajudamos empresas a evoluir digitalmente.           
           </motion.h2>
 
           <motion.p

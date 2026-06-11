@@ -59,7 +59,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.1, ease: [0.4, 0, 0.2, 1] }}
           className="text-[32px] md:text-[48px] lg:text-[52px] font-bold text-white leading-[1.2] mb-6 tracking-tight"
         >
-          Soluções Digitais Personalizadas para seu negócio Lucrar mais com menos dor de Cabeça
+          Soluções digitais personalizadas para empresas crescerem com mais estratégia
         </motion.h1>
 
         <motion.p
@@ -68,35 +68,29 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.25, ease: [0.4, 0, 0.2, 1] }}
           className="text-[14px] md:text-[16px] lg:text-[18px] text-[#D1D5DB] leading-[1.6] mb-[40px] max-w-[650px] font-light"
         >
-          Entendemos o seu negócio, mapeamos o que precisa ser resolvido e executamos com estratégia, para você focar no que realmente importa.
+          Agende uma consultoria gratuita e receba um plano alinhado às necessidades e objetivos do seu negócio.
         </motion.p>
 
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4, ease: [0.4, 0, 0.2, 1] }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-[16px] w-full mb-6"
+          className="flex flex-col items-center justify-center w-full mb-6"
         >
           <a
             href={waLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#4FD1C5] text-[#0D1E22] px-8 py-3.5 w-full sm:w-auto rounded-[6px] font-bold text-[15px] hover:bg-[#38b2a5] shadow-[0_0_20px_rgba(79,209,197,0.3)] hover:shadow-[0_0_30px_rgba(79,209,197,0.5)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center group"
+            className="bg-[#4FD1C5] text-[#0D1E22] px-10 py-4 w-full sm:w-auto min-w-[280px] rounded-[6px] font-bold text-[16px] hover:bg-[#38b2a5] shadow-[0_0_20px_rgba(79,209,197,0.3)] hover:shadow-[0_0_30px_rgba(79,209,197,0.5)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center group gap-2"
           >
-            Quero começar
-          </a>
-
-          <a
-            href="#projetos"
-            className="border border-white/20 text-[#D1D5DB] bg-transparent hover:bg-white/5 px-8 py-3.5 w-full sm:w-auto rounded-[6px] font-medium text-[15px] transition-colors flex items-center justify-center group"
-          >
-            Ver projetos{" "}
+            Agendar consultoria gratuita
             <ArrowRight
               size={18}
-              className="ml-2 group-hover:translate-x-1 transition-transform"
+              className="group-hover:translate-x-1 transition-transform"
             />
           </a>
         </motion.div>
+
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -104,9 +98,9 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-[13px] text-[#9CA3AF] hidden sm:flex items-center justify-center gap-2"
         >
-          <span>Atendimento pelo WhatsApp</span>
+          <span>Diagnóstico gratuito</span>
           <span>·</span>
-          <span>Atendimento imediato via WhatsApp</span>
+          <span>Sem compromisso</span>
         </motion.div>
       </div>
 
@@ -126,3 +120,4 @@ export default function Hero() {
     </section>
   );
 }
+  

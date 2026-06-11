@@ -43,51 +43,29 @@ export default function About() {
             </div>
 
             <h2 id="sobre-heading" className="text-[30px] md:text-[34px] font-display font-bold text-[#112A32] leading-[1.2] mb-4 max-w-[500px]">
-              Por que a Zaytek existe.
+              Por que a Zaytek existe
             </h2>
             <h3 className="text-[18px] text-text-primary leading-[1.6] mb-8 font-medium max-w-[480px]">
-              Uma assessoria construída sobre uma percepção simples: tecnologia
-              sem estratégia é desperdício.
+              Uma assessoria construída para ajudar empresários a enxergar com clareza onde estão as oportunidades de crescimento
             </h3>
 
             <div className="space-y-5 text-[15px] font-sans text-text-secondary leading-[1.8] mb-12 max-w-[520px]">
-              <p>Sou o Gabriel, fundador da Zaytek.</p>
-              <p>
-                Comecei desenvolvendo sites e sistemas e fui percebendo que o
-                problema dos clientes raramente era falta de ferramenta. Era
-                falta de clareza sobre o que realmente precisava ser resolvido.
+              <p>Sou o Gabriel, fundador da Zaytek.
+            
+                Depois de trabalhar com diferentes empresas, percebi um padrão: 
+                a maioria sabia que podia melhorar seus resultados, mas não conseguia
+                identificar onde estavam as oportunidades ou o que realmente precisava ser priorizado.
               </p>
               <p>
-                Foi daí que surgiu a Zaytek, uma assessoria que entende o seu
-                negócio antes de propor qualquer coisa. Que começa pelo
-                diagnóstico, não pelo orçamento.
+                Foi dessa percepção que surgiu a Zaytek. Cada projeto começa pelo entendimento do negócio, 
+                não pela venda de um serviço, só depois de mapear o contexto é que definimos o que faz sentido executar.
               </p>
               <p className="font-medium text-text-primary">
-                Cada projeto que entrego tem meu nome por trás. É exatamente por
-                isso que não aceito entregar menos do que o melhor.
+                Sem pacotes prontos e sem investimentos desnecessários.
+                Apenas o que realmente faz sentido para cada empresa. 
               </p>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-start sm:items-center gap-5"
-            >
-              <a
-                href={waLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-accent text-white px-6 py-3 rounded-md font-medium text-[14px] hover:bg-accent-light transition-colors flex items-center gap-2 group shadow-sm"
-              >
-                Vamos conversar
-                <ArrowRight
-                  size={16}
-                  className="group-hover:translate-x-1 transition-transform"
-                />
-              </a>
-            </motion.div>
+           
           </motion.div>
         </div>
       </div>

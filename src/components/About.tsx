@@ -6,7 +6,7 @@ export default function About() {
     "https://wa.me/5541920047176?text=Oi+Gabriel%2C+conheci+a+Zaytek+pelo+site+e+quero+conversar.";
 
   return (
-    <section id="sobre" className="py-24 bg-bg-primary overflow-hidden" aria-labelledby="sobre-heading">
+    <section id="sobre" className="py-28 bg-bg-primary overflow-hidden" aria-labelledby="sobre-heading">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column: Photo */}

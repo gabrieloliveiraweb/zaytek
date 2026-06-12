@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 text-center lg:text-left">
           <div className="md:col-span-2 lg:col-span-2 flex flex-col items-center lg:items-start">
             <a href="#" aria-label="Zaytek - Ir para o topo da página">
-              <img src="/logo.png" alt="Zaytek" className="h-8 md:h-10 w-auto object-contain" />
+              <img src="/logo2.png" alt="Zaytek" className="h-12 w-auto object-contain" />
             </a>
             <p className="text-text-muted-dark mt-4 max-w-[300px] text-[15px] leading-relaxed mb-6">
               Assessoria digital para negócios que querem crescer com

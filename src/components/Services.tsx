@@ -56,8 +56,8 @@ export default function Services() {
   ];
 
   return (
-    <section id="servicos" className="py-24 bg-bg-primary pt-0" aria-labelledby="servicos-heading">
-      <div className="max-w-5xl mx-auto px-6">
+    <section id="servicos" className=" bg-bg-primary pt-0" aria-labelledby="servicos-heading">
+      <div className="max-w-5xl mx-auto px-6 py-28">
         <div className="mb-16 flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 15 }}

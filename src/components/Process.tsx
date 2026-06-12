@@ -42,7 +42,7 @@ export default function Process() {
   return (
     <section
       id="processo"
-      className="py-24 bg-bg-dark text-text-on-dark relative"
+      className="py-28 bg-bg-dark text-text-on-dark relative"
       ref={containerRef}
     >
       <div className="max-w-5xl mx-auto px-6">

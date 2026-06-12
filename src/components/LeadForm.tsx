@@ -1,10 +1,24 @@
 import { motion } from "motion/react";
-import { ArrowRight, Lock } from "lucide-react";
+import { ArrowRight, Lock, Loader2 } from "lucide-react";
+
+import { useContactForm } from "@/src/hooks/useContactForm";
+import { FormField, TextInput, SelectInput } from "@/src/components/ui/FormField";
 
 export default function LeadForm() {
+  const {
+    register,
+    errors,
+    loading,
+    revenueOptions,
+    handleSubmit,
+    onSubmit,
+  } = useContactForm();
+
   return (
     <section id="contato" className="py-24 bg-bg-surface overflow-hidden">
       <div className="max-w-4xl mx-auto px-6">
+
+        {/* Header */}
         <div className="mb-14 text-center">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
@@ -36,81 +50,93 @@ export default function LeadForm() {
           </motion.p>
         </div>
 
+        {/* Form card */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.3 }}
         >
-          <form className="bg-white rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.06)] border border-border-light p-8 md:p-12 mb-6 max-w-2xl mx-auto flex flex-col gap-6">
-            <div className="flex flex-col gap-2">
-              <label htmlFor="name" className="text-[14px] font-bold text-[#112A32]">
-                Nome completo
-              </label>
-              <input
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            noValidate
+            className="bg-white rounded-2xl shadow-[0_12px_40px_rgba(0,0,0,0.06)] border border-border-light p-8 md:p-12 mb-6 max-w-2xl mx-auto flex flex-col gap-6"
+          >
+            <FormField label="Nome completo" htmlFor="nome" error={errors.nome?.message}>
+              <TextInput
+                id="nome"
                 type="text"
-                id="name"
                 placeholder="Seu nome"
-                className="w-full px-4 py-3.5 bg-bg-primary border border-border-light rounded-xl text-[15px] outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
-                required
+                maxLength={120}
+                disabled={loading}
+                error={errors.nome?.message}
+                {...register("nome")}
               />
-            </div>
+            </FormField>
 
-            <div className="flex flex-col gap-2">
-              <label htmlFor="email" className="text-[14px] font-bold text-[#112A32]">
-                Seu e-mail
-              </label>
-              <input
-                type="email"
+            <FormField label="Seu e-mail" htmlFor="email" error={errors.email?.message}>
+              <TextInput
                 id="email"
+                type="email"
                 placeholder="voce@empresa.com"
-                className="w-full px-4 py-3.5 bg-bg-primary border border-border-light rounded-xl text-[15px] outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
-                required
+                maxLength={254}
+                disabled={loading}
+                error={errors.email?.message}
+                {...register("email")}
               />
-            </div>
+            </FormField>
 
-            <div className="flex flex-col gap-2">
-              <label htmlFor="phone" className="text-[14px] font-bold text-[#112A32]">
-                Número de celular com DDD
-              </label>
-              <input
+            <FormField
+              label="Número de celular com DDD"
+              htmlFor="telefone"
+              error={errors.telefone?.message}
+            >
+              <TextInput
+                id="telefone"
                 type="tel"
-                id="phone"
                 placeholder="(11) 99999-9999"
-                className="w-full px-4 py-3.5 bg-bg-primary border border-border-light rounded-xl text-[15px] outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all"
-                required
+                maxLength={30}
+                disabled={loading}
+                error={errors.telefone?.message}
+                {...register("telefone")}
               />
-            </div>
+            </FormField>
 
-            <div className="flex flex-col gap-2">
-              <label htmlFor="revenue" className="text-[14px] font-bold text-[#112A32]">
-                Faturamento mensal da empresa
-              </label>
-              <select
+            <FormField
+              label="Faturamento mensal da empresa"
+              htmlFor="revenue"
+              error={errors.revenue?.message}
+            >
+              <SelectInput
                 id="revenue"
-                className="w-full px-4 py-3.5 bg-bg-primary border border-border-light rounded-xl text-[15px] text-text-primary outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-all appearance-none cursor-pointer"
-                required
-                defaultValue=""
-              >
-                <option value="" disabled hidden>Selecione uma faixa de faturamento</option>
-                <option value="Abaixo de 10mil">Abaixo de 10mil</option>
-                <option value="10mil a 30mil">10mil a 30mil</option>
-                <option value="30mil a 70mil">30mil a 70mil</option>
-                <option value="70mil a 100mil">70mil a 100mil</option>
-                <option value="100mil a 300mil">100mil a 300mil</option>
-                <option value="300mil a 500mil">300mil a 500mil</option>
-                <option value="Acima de 500mil">Acima de 500mil</option>
-              </select>
-            </div>
+                placeholder="Selecione uma faixa de faturamento"
+                options={revenueOptions}
+                disabled={loading}
+                error={errors.revenue?.message}
+                {...register("revenue")}
+              />
+            </FormField>
 
+            {/* Submit button */}
             <button
               type="submit"
-              className="mt-4 bg-accent hover:bg-accent-light text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex justify-center items-center gap-2 group w-full"
+              disabled={loading}
+              className="mt-4 bg-accent hover:bg-accent-light text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex justify-center items-center gap-2 group w-full disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-lg"
             >
-              Agendar consultoria gratuita
-              <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              {loading ? (
+                <>
+                  <Loader2 size={18} className="animate-spin" />
+                  Enviando...
+                </>
+              ) : (
+                <>
+                  Agendar consultoria gratuita
+                  <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                </>
+              )}
             </button>
 
+            {/* Privacy note */}
             <div className="flex items-center justify-center gap-2 mt-2 text-[13px] text-text-muted">
               <Lock size={14} className="text-[#3BB1CA]" />
               <span>Seus dados são tratados com total confidencialidade.</span>

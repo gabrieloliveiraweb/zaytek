@@ -46,7 +46,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <section id="projetos" className="py-24 bg-bg-primary overflow-hidden">
+    <section id="projetos" className="py-28 bg-bg-primary overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative">
         <div className="text-center mb-16">
           <motion.div

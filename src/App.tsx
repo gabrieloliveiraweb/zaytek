@@ -3,26 +3,46 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import { Toaster } from 'react-hot-toast';
 import PainPoints from './components/PainPoints';
 import Solutions from './components/Solutions';
 import Services from './components/Services';
 import Process from './components/Process';
 import Portfolio from './components/Portfolio';
 import About from './components/About';
-import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import LeadForm from './components/LeadForm';
+import ResponsiveHeroBanner from './components/ui/responsive-hero-banner';
 
 export default function App() {
   return (
-    <div className="relative min-h-screen font-sans bg-bg-primary text-text-primary overflow-x-hidden w-full">
-      <Navbar />
+    <>
+      <Toaster
+        position="top-right"
+        toastOptions={{
+          duration: 4000,
+          style: {
+            fontFamily: 'var(--font-sans)',
+            fontSize: '14px',
+            borderRadius: '10px',
+          },
+          success: {
+            style: {
+              background: '#0f3d2e',
+              color: '#d1fae5',
+              border: '1px solid #34d399',
+            },
+          },
+          error: {
+            style: { background: '#fff', color: '#0D1E22' },
+          },
+        }}
+      />
+      <div className="relative min-h-screen font-sans bg-bg-primary text-text-primary overflow-x-hidden w-full">
       <main id="main-content">
-        <Hero />
+        <ResponsiveHeroBanner />
         <PainPoints />
         <Solutions />
         <Services />
@@ -33,7 +53,6 @@ export default function App() {
         <FAQ />
         
         <div className="relative overflow-hidden bg-bg-dark">
-          {/* Background Image with Overlay */}
           <div 
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: "url('/bg-footer.webp')" }}
@@ -49,5 +68,6 @@ export default function App() {
         </div>
       </main>
     </div>
+    </>
   );
 }

@@ -26,7 +26,7 @@ export default function Solutions() {
   ];
 
   return (
-    <section className="py-24 bg-bg-primary">
+    <section className="py-28 bg-white">
       <div className="max-w-4xl mx-auto px-6">
         <div className="mb-16 flex flex-col items-center text-center">
           <motion.div

@@ -16,9 +16,6 @@ export default function Hero() {
         src="/bg-home-zaytek.webp"
         alt="Cidades e tecnologia ao fundo"
         aria-hidden="true"
-        fetchPriority="high"
-        loading="eager"
-        decoding="async"
         className="absolute inset-0 w-full h-full object-cover object-center z-0 scale-105 blur-[1px]"
       />
 

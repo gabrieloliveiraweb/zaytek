@@ -48,7 +48,7 @@ export default function PainPoints() {
     "https://wa.me/5541920047176?text=Oi+Gabriel%2C+vim+pelo+site+e+quero+entender+como+resolver+os+problemas+digitais+do+meu+neg%C3%B3cio.";
 
   return (
-    <section className="py-24 bg-bg-dark text-text-on-dark flex items-center" aria-labelledby="painpoints-heading">
+    <section className="py-28 bg-bg-primary text-text-primary flex items-center" aria-labelledby="painpoints-heading">
       <div className="max-w-5xl mx-auto px-6 w-full">
         <div className="flex flex-col items-center text-center mb-16">
           <motion.div
@@ -56,7 +56,7 @@ export default function PainPoints() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-1.5 rounded-full border border-[#23525F] bg-transparent mb-6 text-[#3BB1CA] text-[11px] font-bold tracking-widest uppercase"
+            className="inline-block px-4 py-1.5 rounded-full border border-[rgba(35,82,95,0.15)] bg-[rgba(35,82,95,0.06)] mb-6 text-[#5E757D] text-[11px] font-bold tracking-widest uppercase"
           >
             {painPointsCopy.badge}
           </motion.div>
@@ -67,7 +67,7 @@ export default function PainPoints() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-[30px] md:text-[34px] font-bold leading-tight mb-4 max-w-2xl"
+            className="text-[30px] md:text-[34px] font-bold text-[#112A32] leading-tight mb-4 max-w-2xl"
           >
             {painPointsCopy.title}
           </motion.h2>
@@ -77,7 +77,7 @@ export default function PainPoints() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-[16px] text-text-muted-dark max-w-[540px] mx-auto"
+            className="text-[16px] text-text-secondary max-w-[540px] mx-auto"
           >
             {painPointsCopy.subtitle}
           </motion.p>
@@ -94,19 +94,19 @@ export default function PainPoints() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 * (idx + 1) }}
-                className="group bg-[rgba(255,255,255,0.04)] border border-border-dark rounded-[12px] p-7 md:p-8 hover:border-[rgba(46,138,158,0.3)] hover:-translate-y-0.5 transition-all duration-300"
+                className="group bg-white border border-border-light rounded-[12px] p-7 md:p-8 hover:border-accent hover:shadow-md hover:-translate-y-0.5 transition-all duration-300"
               >
                 {IconComponent && (
                   <IconComponent
-                    className="text-accent-light mb-5"
+                    className="text-accent mb-5"
                     size={26}
                     strokeWidth={1.5}
                   />
                 )}
-                <h3 className="text-[16px] font-bold text-text-on-dark mb-2">
+                <h3 className="text-[16px] font-bold text-[#112A32] mb-2">
                   {card.title}
                 </h3>
-                <p className="text-[14px] text-text-muted-dark leading-relaxed">
+                <p className="text-[14px] text-text-secondary leading-relaxed">
                   {card.description}
                 </p>
               </motion.div>
@@ -121,7 +121,7 @@ export default function PainPoints() {
           transition={{ duration: 0.5, delay: 0.5 }}
           className="flex flex-col items-center text-center gap-6"
         >
-          <p className="text-text-muted-dark text-[15px]">
+          <p className="text-text-secondary text-[15px]">
             {painPointsCopy.footer.text.split("\n").map((line, i) => (
               <span key={i}>
                 {line}

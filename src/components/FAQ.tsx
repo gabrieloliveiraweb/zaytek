@@ -69,14 +69,12 @@ export default function FAQ() {
 }
 
 function AccordionItem({
-  key,
   id,
   question,
   answer,
   isOpen,
   onClick,
 }: {
-  key: number
   id: string;
   question: string;
   answer: string;
@@ -87,7 +85,7 @@ function AccordionItem({
   const panelId = `${id}-panel`;
 
   return (
-    <div key={key} className="border-b border-[rgba(0,0,0,0.05)]" role="listitem">
+    <div className="border-b border-[rgba(0,0,0,0.05)]" role="listitem">
       <button
         id={buttonId}
         onClick={onClick}

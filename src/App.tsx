@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { Toaster } from 'react-hot-toast';
 import PainPoints from './components/PainPoints';
 import Solutions from './components/Solutions';
@@ -14,7 +9,7 @@ import FAQ from './components/FAQ';
 import CTA from './components/CTA';
 import Footer from './components/Footer';
 import LeadForm from './components/LeadForm';
-import ResponsiveHeroBanner from './components/ui/responsive-hero-banner';
+import ResponsiveHeroBanner from './components/ui/Responsive-hero-banner';
 
 export default function App() {
   return (
